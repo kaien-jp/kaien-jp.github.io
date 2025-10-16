@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>生成AIメンタルケア入門-プロンプト集</title>
+  <style>
+    :root{
+      --mcp-bg:#f5faff;
+      --mcp-panel:#ffffff;
+      --mcp-panel-2:#f0f7ff;
+      --mcp-text:#333333;
+      --mcp-muted:#666666;
+      --mcp-brand:#4cafef;
+      --mcp-brand-2:#399cd6;
+      --mcp-ok:#4caf50;
+      --mcp-radius:12px;
+      --mcp-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    #mcp-body *,
+    #mcp-body *::before,
+    #mcp-body *::after{
+      box-sizing:border-box
+    }
+    #mcp-body {
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", sans-serif;
+      background: var(--mcp-bg);
+      color: var(--mcp-text);
+      line-height:1.6;
+    }
+    .mcp-container{max-width: 980px; margin: 0 auto; padding: 40px 18px 80px}
+    #mcp-body h1{font-size: 32px; margin: 0 0 8px;}
+    .mcp-lead{margin:0 0 24px}
+    #mcp-body h2{font-size: 20px; margin: 28px 0 12px; color:var(--mcp-brand-2)}
+    .mcp-accordion{display:grid; gap:12px}
+    .mcp-item{background: var(--mcp-panel); border:1px solid #d0e3f5; border-radius: var(--mcp-radius); box-shadow: var(--mcp-shadow); overflow:hidden}
+    .mcp-item-header{display:flex; justify-content:space-between; align-items:center; padding: 14px; cursor:pointer}
+    .mcp-item-title{font-weight:600; font-size: 16px; margin:0; display:flex; align-items:center; gap:8px}
+    .mcp-arrow{
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border-right: 2px solid var(--mcp-brand-2);
+      border-bottom: 2px solid var(--mcp-brand-2);
+      transform: rotate(45deg) translateY(-1px);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+    .mcp-item-header.active .mcp-arrow{transform: rotate(135deg) translateY(-1px);}
+    .mcp-btn{border:none; border-radius: 6px; padding:8px 10px; font-weight:600; color:#fff; background: var(--mcp-brand); cursor:pointer}
+    .mcp-btn:hover{background: var(--mcp-brand-2)}
+    .mcp-item-panel{padding: 0 14px 14px; display:none}
+    .mcp-item-panel.open{display:block}
+    .mcp-copy-message{
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    .mcp-copy-message.show {opacity: 1;}
+    #mcp-body pre{
+      margin:0;
+      background:#f9fbfd;
+      border:1px solid #d0e3f5;
+      border-radius:6px;
+      padding:12px;
+      overflow:auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    #mcp-body footer{margin-top:48px; padding-top:24px; border-top:1px solid #d0e3f5}
+  </style>
+</head>
+<body id="mcp-body">
+  <div class="mcp-container">
+    <header>
+      <h1>生成AIメンタルケア入門-プロンプト集</h1>
+      <p class="mcp-lead">書籍購入者特典ページ。各セクション右側の矢印をクリックして開閉できます。コピーは左端ボタンで。</p>
+    </header>
+
+    {% for k, l in data.items() %}
+    <h2>{{ k }}</h2>
+    <section class="mcp-accordion">
+      {% for row in l %}
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>{{row['見出し']}}</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>{{row['プロンプト']}}</code></pre></div>
+      </article>
+      {% endfor %}
+    </section>
+    {% endfor %}
+
+
+    <footer>
+      <p>© 2025 Kaien / 益田裕介（監修）</p>
+      <p>お問い合わせ：<a href="mailto:info@kaien-lab.com">info@kaien-lab.com</a></p>
+    </footer>
+  </div>
+
+  <div id="copyMsg" class="mcp-copy-message">コピーしました</div>
+
+  <script>
+  'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.mcp-item-header').forEach(header => {
+      header.addEventListener('click', e => {
+        if(e.target.classList.contains('mcp-btn')) return;
+        header.classList.toggle('active');
+        const panel = header.nextElementSibling;
+        panel.classList.toggle('open');
+      });
+    });
+
+    const copyMsg = document.getElementById('copyMsg');
+
+    document.querySelectorAll('.mcp-btn.copy').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const code = btn.closest('.mcp-item').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          copyMsg.classList.add('show');
+          setTimeout(()=>{
+            copyMsg.classList.remove('show');
+          },1500);
+        });
+      });
+    });
+  });
+  </script>
+</body>
+</html>

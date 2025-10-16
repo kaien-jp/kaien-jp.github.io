@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>生成AIメンタルケア入門-プロンプト集</title>
+  <style>
+    :root{
+      --mcp-bg:#f5faff;
+      --mcp-panel:#ffffff;
+      --mcp-panel-2:#f0f7ff;
+      --mcp-text:#333333;
+      --mcp-muted:#666666;
+      --mcp-brand:#4cafef;
+      --mcp-brand-2:#399cd6;
+      --mcp-ok:#4caf50;
+      --mcp-radius:12px;
+      --mcp-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+    #mcp-body *,
+    #mcp-body *::before,
+    #mcp-body *::after{
+      box-sizing:border-box
+    }
+    #mcp-body {
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", sans-serif;
+      background: var(--mcp-bg);
+      color: var(--mcp-text);
+      line-height:1.6;
+    }
+    .mcp-container{max-width: 980px; margin: 0 auto; padding: 40px 18px 80px}
+    #mcp-body h1{font-size: 32px; margin: 0 0 8px;}
+    .mcp-lead{margin:0 0 24px}
+    #mcp-body h2{font-size: 20px; margin: 28px 0 12px; color:var(--mcp-brand-2)}
+    .mcp-accordion{display:grid; gap:12px}
+    .mcp-item{background: var(--mcp-panel); border:1px solid #d0e3f5; border-radius: var(--mcp-radius); box-shadow: var(--mcp-shadow); overflow:hidden}
+    .mcp-item-header{display:flex; justify-content:space-between; align-items:center; padding: 14px; cursor:pointer}
+    .mcp-item-title{font-weight:600; font-size: 16px; margin:0; display:flex; align-items:center; gap:8px}
+    .mcp-arrow{
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border-right: 2px solid var(--mcp-brand-2);
+      border-bottom: 2px solid var(--mcp-brand-2);
+      transform: rotate(45deg) translateY(-1px);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+    .mcp-item-header.active .mcp-arrow{transform: rotate(135deg) translateY(-1px);}
+    .mcp-btn{border:none; border-radius: 6px; padding:8px 10px; font-weight:600; color:#fff; background: var(--mcp-brand); cursor:pointer}
+    .mcp-btn:hover{background: var(--mcp-brand-2)}
+    .mcp-item-panel{padding: 0 14px 14px; display:none}
+    .mcp-item-panel.open{display:block}
+    .mcp-copy-message{
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    .mcp-copy-message.show {opacity: 1;}
+    #mcp-body pre{
+      margin:0;
+      background:#f9fbfd;
+      border:1px solid #d0e3f5;
+      border-radius:6px;
+      padding:12px;
+      overflow:auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    #mcp-body footer{margin-top:48px; padding-top:24px; border-top:1px solid #d0e3f5}
+  </style>
+</head>
+<body id="mcp-body">
+  <div class="mcp-container">
+    <header>
+      <h1>生成AIメンタルケア入門-プロンプト集</h1>
+      <p class="mcp-lead">書籍購入者特典ページ。各セクション右側の矢印をクリックして開閉できます。コピーは左端ボタンで。</p>
+    </header>
+
+    
+    <h2>第2章まずは使ってみよう</h2>
+    <section class="mcp-accordion">
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>ダイエットに必要な科学的知識とは？</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>ダイエットに必要な科学的知識はどんなものがありますか？</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>痩せると美しく感じる社会的背景とは？</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>なぜ痩せると美しく感じるのでしょう？　社会的背景を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>結婚という制度の歴史的背景を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>結婚という制度の歴史的背景を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>仏陀として「痩せて結婚したい」という悩みに答えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたは仏陀（ブッダ）です。私の「痩せて可愛くなって、彼氏作って、ゆくゆくは結婚したいけどなかなか痩せられない」という悩みに答えてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>歴史の専門家として日本の首都について教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたは歴史の専門家として、詳細な背景情報も含めて答えてください。日本の首都は？</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>30代男性向けADHDに関する医師監修のおすすめ本を5冊</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>ADHDについて、2020年以降に発行された、医師の監修がついている、30代男性におすすめの本を５冊紹介してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>30代女性、上司との人間関係の悩みへのアドバイス</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>30代女性で、職場の人間関係に悩んでいます。直属の上司とのコミュニケーションがうまくいきません。どうしたらいいでしょうか？</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>構造主義を中学生にも分かるように専門用語なしで説明して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>構造主義について以下の条件に基づき、200文字以内で説明してください。
+    （条件）
+    ・中学生にも分かるように
+    ・専門用語を使わない</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>AIに役割を与えて的確な回答を得る方法と注意点</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>「あなたはメンタルコーチです」「教師として答えてください」など、どういう立場で答えてほしいかを伝えることで、より的確な回答が得られます。
+    ただし、医師・薬剤師・看護師など医療行為に関わる役割を指定することはおすすめしません。</code></pre></div>
+      </article>
+      
+    </section>
+    
+    <h2>第4章AIに質問させて「自分」を知ろう</h2>
+    <section class="mcp-accordion">
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>カウンセラーとして子供時代を振り返る手助けをして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはカウンセラーです。私の子供ども時代について詳しく振り返りたいと思います。一つずつ質問をして、私が思い出せるように手助けしてください。急がずに、じっくりと時間をかけて進めてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>中学・高校時代に熱中したことや大切だったことを探る質問をして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>中学・高校時代を振り返りたいです。当時の私が熱中していたものや、大切に思っていたことを探りたいので、様々な角度から質問してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>カウンセラーとして高校卒業～大学時代を振り返る手助けをして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはカウンセラーです。高校卒業～大学生時代を振り返りたいです。一つずつ質問をして、私が思い出せるように手助けしてください。急がずに、じっくりと時間をかけて進めてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>カウンセラーとして大学卒業～社会人初期を振り返る手助けをして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはカウンセラーです。大学卒業～社会人初期について振り返りたいです。一つずつ質問をして、私が思い出せるように手助けしてください。急がずに、じっくりと時間をかけて進めてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとして家族について多角的に質問して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。私の家族について質問してください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>これまでの会話から私の人生史をまとめて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>これまでの会話ログを参考に、私の人生史をまとめてみてください。主要な出来事、転機、成長のポイントを含めて構成してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>これまでの会話から私の「パーソナル哲学」を言葉にして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>これまでの会話ログを参考に、私の「パーソナル哲学」を言葉にしてください。（パーソナル哲学＝人のマネじゃなく、自分の経験から生まれた考え方や大切にしていること）</code></pre></div>
+      </article>
+      
+    </section>
+    
+    <h2>第5章AI依存の予防と対策</h2>
+    <section class="mcp-accordion">
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>褒め言葉は不要、淡々と回答してください</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>褒め言葉は必要ないので、淡々と回答してください</code></pre></div>
+      </article>
+      
+    </section>
+    
+    <h2>第6章AI依存の予防と対策</h2>
+    <section class="mcp-accordion">
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>共感しすぎず、冷静かつ客観的に回答してください</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>共感しすぎず、冷静かつ事実を重視した態度で回答してください。過度な称賛は控え、客観的な評価をお願いします</code></pre></div>
+      </article>
+      
+    </section>
+    
+    <h2>第6章AIで精神療法をやってみよう</h2>
+    <section class="mcp-accordion">
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>認知行動療法を中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>認知行動療法について、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>認知行動療法で考えを分析し、建設的な思考を提案して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>上記の考えについて、認知行動療法の観点から分析してください。認知の歪みがあるか確認し、より現実的で建設的な考え方を提案してください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとして認知行動療法を解説・体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。認知行動療法について私に解説してください。また具体例を出しつつ、私に体験させてください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>10分間のマインドフルネス瞑想を指導して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>マインドフルネス瞑想の指導をしてください。10分間のセッションで、呼吸に注意を向ける方法、雑念が浮かんだ時の対処法を実践的に教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>暴露療法を中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>暴露療法について、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>人前で話す不安を克服するための10段階の暴露療法ステップ</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>人前で話すことに強い不安があります。暴露療法を使って段階的に克服したいので、不安の度合いが低いものから高いものまで、10段階の練習ステップを作ってください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>面接不安克服のため、人事担当者として面接シミュレーションをして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>面接の不安を軽減したいです。AIとの対話を使って面接練習をしたいので、人事担当者の役割を演じて、段階的に難易度を上げながら面接シミュレーションをしてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとして暴露療法を解説・体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。暴露療法について私に解説してください。また具体例を出しつつ、私に体験させてください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>アンガーマネジメントを中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>アンガーマネジメントについて、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>怒りをコントロールするためのアンガーマネジメント技法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>嫌なことがあると、つい怒鳴り、その後もイライラが続きます。アンガーマネジメントの技法を使って、より効果的で建設的な対応方法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>怒りのメカニズムと建設的な表現方法を具体例で教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>アンガーマネジメントについて詳しく教えてください。怒りが生まれるメカニズム、怒りの裏にある感情、建設的な表現方法について、具体例を使って説明してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>セルフコンパッションを中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>セルフコンパッションについて、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>仕事のミスで自分を責めている時のセルフコンパッション対処法</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>仕事で大きなミスをしてしまい、自分を責め続けています。セルフコンパッションの技法を使って、この状況への対処法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>自己批判が強い人が自分に優しくなるためのセルフコンパッション</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>セルフコンパッションについて教えてください。自己批判が強い人が、自分に優しくなるための具体的な方法を、実際に体験できるような形で説明してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとしてセルフコンパッションを解説・体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。セルフコンパッションについて私に解説してください。また具体例を出しつつ、私に体験させてください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>アサーションを中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>アサーションについて、中学生にも分かるように教えてください」</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>アサーションを使った上手な残業の断り方を具体例で教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>職場で無理な残業を頼まれた時の断り方について、アサーションの技法を使って教えてください。攻撃的でも受動的でもない、適切な自己主張の方法を具体例で示してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>アサーション練習のため、上司役として無理な要求をして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたは私の上司役をしてください。私はアサーションの練習をしたいので、様々な無理な要求をしてきてください。私がそれに対して適切に対応できるよう、練習相手になってください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとしてアサーションを解説・体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。アサーションについて私に解説してください。また具体例を出しつつ、私に体験させてください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>精神分析を中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>精神分析について、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>見た夢を精神分析の観点から分析して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>夢について分析してほしいです。夢の内容は○○でした。精神分析的な観点から、この夢が示している可能性のある心理状態や無意識の欲求について教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>人間関係で繰り返す問題を「転移」の概念で理解・解決したい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>人間関係で同じパターンの問題を繰り返してしまいます。精神分析でいう『転移』の概念を使って、この問題を理解し、解決策を考えたいです</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>子供時代の経験が今の自分に与える影響を精神分析的に考えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>子どものころの経験が、今の自分にどう影響しているのか知りたいです。精神分析的に考えてみてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>人に嫌われるのが怖い理由を精神分析で探りたい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>人に嫌われるのが怖くて、つい顔色をうかがってしまいます。これがなぜなのか、精神分析的に考えて、自分の心の奥にある思い込みや過去の体験を探ってみたいです。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>親との関係が今の人間関係に与える影響を精神分析の視点で考えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>親との関係が、今の人間関係にどう影響しているのかを知りたいです。精神分析の視点から考えてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>恋愛で同じ別れを繰り返す背景を精神分析で探って</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>恋愛でいつも同じような別れ方をしてしまいます。精神分析的に、この繰り返しの背景にある無意識の欲求や心の傾向を探ってください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>過剰反応は「転移」「防衛機制」か？具体例を交えて説明して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>自分が他人に過剰に反応してしまう時、精神分析でいう“転移”や“防衛機制”が関係しているのか知りたいです。具体例を交えて説明してください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>自己否定感が生まれる理由を精神分析の視点で知りたい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>何をしても自分を認められない感じが続いています。精神分析の視点で、なぜこうした自己否定感が生まれるのか知りたいです。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>対人関係療法を中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>対人関係療法について、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>対人関係療法の観点から人間関係の悩みを整理して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>私の人間関係の悩みを、対人関係療法の観点から整理してください 
+    - 最近の困りごと：〇〇 
+    - 繰り返すパターン：〇〇 
+    - 関係の変化：〇〇</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>私の人間関係がどの対人関係療法のテーマに当てはまるか考えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>今の私の人間関係、どれが当てはまるか一緒に考えて</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>最近の人間関係の出来事と、そこにあった感情を整理して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>最近の人間関係の出来事から、どんな感情があったか整理して</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>相手に気持ちをうまく伝えるためのロールプレイングをさせて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>この人にモヤモヤしているけど、どう言えばうまく伝えられるか練習させて</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>人間関係の変化を受け入れるための考え方を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>関係が変わったことを受け入れたい。どう考えればいい？</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>家族療法を中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>家族療法について、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>メンタルコーチとして家族療法を解説・体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>あなたはメンタルコーチです。家族療法について私に解説してください。また具体例を出しつつ、私に体験させてください。私が返事に行き詰まった時は、私とあなたの会話が行き詰まらないように、あなたは様々な角度から私に質問をしてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>オープンダイアローグを中学生にも分かるように教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>オープンダイアローグについて、中学生にも分かるように教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>複数人の専門家役とオープンダイアローグを体験させて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>これからオープンダイアローグを行いたいです。
+    例えば、優しい父親のような精神科医（50代男性）、スポーツが得意な看護師（40代女性）、映画が好きなソーシャルワーカー（20代男性）を参加者にして、オープンダイアローグを体験させて下さい。
+    
+    私の話をまず聞いて下さい。
+    次に３人で、リフレクティングを行なって下さい。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>快眠のための具体的な生活習慣や環境設定を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>良く眠るための習慣や環境の整え方は？最適な温度、湿度、音、衣服と布団、光、スマホ時間、夕食の内容、日中の活動、運動、短時間の昼寝、規則正しい生活、朝の日光の有無、それらをチェックしているか教えてください。</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>漠然とした不安を具体的な問題に分解して対処したい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>◯◯という漠然とした不安がぐるぐると頭を回っています。この抽象的な思考を具体的な問題に分解し、対処しやすい形に変えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>自分が何に悩んでいるのか明確にするための質問をして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>モヤモヤした気持ちがあるのですが、何について悩んでいるのか自分でもよくわかりません。適切な質問をして、私の悩みの核心を明確にするのを手伝ってください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>決断の不安を減らすため、最悪のシナリオと対策を考えたい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>◯◯について迷い続けています。最悪のシナリオを想定し、それぞれに対する具体的な対策を考えることで、決断の不安を軽減したいです</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>うつ病回復期の進歩を客観的に評価し、励まして</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>うつ病の回復期にいます。今日は○○ができました。これまでの会話を参考に、私の回復の進歩を客観的に評価してください。小さな成果も認めて、励ましてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>頭から離れない考えに対し、バランスの取れた見方を見つけたい</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>◯◯という考えが頭から離れません。この考えに対して、より現実的でバランスの取れた見方を見つけるのを手伝ってください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>やる気が出ない時に無理なく始められる活動を提案して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>やる気が出ない状態ですが、少しずつ活動を増やしたいです。私の状況に合わせて、無理のない範囲で始められる活動を提案してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>今日の行動記録から軽躁状態など精神状態を判断して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>今日の行動は以下の通りでした：
+    - 睡眠時間：○時間
+    - 活動内容：○○
+    - 気分の変化：○○
+    - 支出：○○円
+    
+    これまでの会話ログを参考に、私が軽躁状態になっていないか、通常の状態なのか、混合状態なのか判断してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>月経周期と気分の記録からPMDDの症状と対処法を提案して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>月経周期と気分の関係を記録しています。データを分析して、PMDDの症状パターンを把握し、対処法を提案してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>パニック発作が起きそうな時の即時対処法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>パニック発作が起きそうな時の対処法を教えてください。呼吸法、認知技法、環境調整など、すぐに実践できる方法を具体的に説明してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>過度な手洗いへの心配を和らげる科学的根拠を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>手を洗わないと病気になるという考えが止まりません。手洗いと感染予防について、科学的な根拠に基づいた正確な情報を教えてください。過度な心配を和らげたいです</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>指示された仕事の進め方を具体的なステップに分解して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>上司から『◯◯を進めて』と言われましたが、何から始めていいかわかりません。具体的なステップに分解し、優先順位をつけて、やるべきことをリストアップしてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>職場で同僚との雑談がうまくできる方法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>同僚との雑談が苦手です。職場での自然な会話の仕方、話題の選び方、相手の気持ちを理解する方法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>ADHDの特性に合わせた計画実行と時間管理のコツを教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>ADHDのため、計画を立てて実行することが苦手です。今日やるべきことを整理し、集中しやすい順番に並べ、時間管理のコツを教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>会議の内容を記憶・整理する効果的な方法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>会議の内容をよく忘れてしまいます。重要な情報を記憶し、整理するための効果的な方法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>読字障害がある場合の文章理解を助ける工夫を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>読字障害があります。文章を理解しやすくするための工夫や、音声読み上げ機能の活用法など、学習を支援する方法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>小学生にもわかるように、簡単な言葉で説明して</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>小学生でもわかるように、簡単な言葉で説明してください。難しい言葉を使う時は、必ず意味も教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>お金に関する詐欺から身を守る具体的な方法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>お金に関する詐欺から身を守る方法を教えてください。怪しい話の見分け方、断り方、相談先などを具体的に説明してください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>知能と生活スキルの非同期発達について説明と対処法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>知的能力は高いのに、日常生活スキルや感情コントロールが苦手です。この非同期発達について説明し、バランスを取る方法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>音や光に敏感な「過度激動」について説明と対処法を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>音や光に敏感で、感情も激しく反応してしまいます。過度激動について説明し、日常生活での対処法を教えてください</code></pre></div>
+      </article>
+      
+      <article class="mcp-item">
+        <div class="mcp-item-header"><span class="mcp-item-title"><span class="mcp-arrow"></span>認知症の初期症状と、物忘れを補う生活の工夫を教えて</span><button class="mcp-btn copy">コピー</button></div>
+        <div class="mcp-item-panel"><pre><code>最近、物忘れが多くなりました。認知症の初期症状について教え、記憶を補完する生活の工夫を提案してください</code></pre></div>
+      </article>
+      
+    </section>
+    
+
+
+    <footer>
+      <p>© 2025 Kaien / 益田裕介（監修）</p>
+      <p>お問い合わせ：<a href="mailto:info@kaien-lab.com">info@kaien-lab.com</a></p>
+    </footer>
+  </div>
+
+  <div id="copyMsg" class="mcp-copy-message">コピーしました</div>
+
+  <script>
+  'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.mcp-item-header').forEach(header => {
+      header.addEventListener('click', e => {
+        if(e.target.classList.contains('mcp-btn')) return;
+        header.classList.toggle('active');
+        const panel = header.nextElementSibling;
+        panel.classList.toggle('open');
+      });
+    });
+
+    const copyMsg = document.getElementById('copyMsg');
+
+    document.querySelectorAll('.mcp-btn.copy').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const code = btn.closest('.mcp-item').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          copyMsg.classList.add('show');
+          setTimeout(()=>{
+            copyMsg.classList.remove('show');
+          },1500);
+        });
+      });
+    });
+  });
+  </script>
+</body>
+</html>
