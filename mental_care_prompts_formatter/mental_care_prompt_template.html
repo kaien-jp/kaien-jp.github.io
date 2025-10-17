@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>生成AIメンタルケア入門-プロンプト集</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <style>
     :root{
       --mcp-bg:#f5faff;
@@ -84,8 +85,25 @@
   <div class="mcp-container">
     <header>
       <h1>生成AIメンタルケア入門-プロンプト集</h1>
-      <p class="mcp-lead">書籍購入者特典ページ。各セクション右側の矢印をクリックして開閉できます。コピーは左端ボタンで。</p>
+      <p class="mcp-lead">📘 本ページについて<br />
+        このページは、書籍『精神科医が教えるAIメンタルケア入門』（益田裕介・株式会社Kaien 著／翔泳社刊）で紹介しているAI活用のプロンプト例を一覧化したものです。<br />
+        日々のセルフケアや対話のヒントとして、自由にお使いください。</p>
+      <p>🔍 使い方</p>
+      <ul>
+        <li>各セクション左端の下向き矢印をクリックすると、内容が確認できます。</li>
+        <li>各セクション右端の「コピー」ボタンを押すと、AIチャット欄に貼り付けてすぐに使えます。</li>
+        <li>ご自身の状況に合わせて、言葉を少し変えたり追加するのもおすすめです。</li>
+      </ul>
+      <p>⚠️ ご利用時の注意</p>
+      <p>本書および本ページで紹介するAIメンタルケアは、医療行為ではなくセルフケアの補助的なツールです。使う際は、以下のルールを守って安全にご活用ください。</p>
+      <ul>
+        <li>個人情報（氏名・住所・病歴など）を入力しないでください</li>
+        <li>AIは医師や心理士の代わりではありません。不調が続く場合は、必ず専門家や医療機関にご相談ください</li>
+        <li>AIの回答は誤りを含む可能性があります。鵜呑みにせず「考える材料」として扱いましょう</li>
+      </ul>
     </header>
+
+    <hr />
 
     {% for k, l in data.items() %}
     <h2>{{ k }}</h2>
@@ -99,10 +117,14 @@
     </section>
     {% endfor %}
 
-
     <footer>
-      <p>© 2025 Kaien / 益田裕介（監修）</p>
-      <p>お問い合わせ：<a href="mailto:info@kaien-lab.com">info@kaien-lab.com</a></p>
+      <p>このページは、書籍『精神科医が教えるAIメンタルケア入門』<br/>
+        （著：益田裕介・株式会社Kaien）の購入者特典ページです。<br />
+        より詳しい情報は以下の公式サイトからご覧いただけます。</p>
+      <p><a href="https://www.shoeisha.co.jp/book/detail/9784798193571">書籍紹介ページ（翔泳社公式サイト）</a><br />
+      <a href="https://wasedamental.com/">益田裕介 公式サイト｜早稲田メンタルクリニック</a><br />
+      <a href="https://www.kaien-lab.com/">株式会社Kaien（Kaien Co., Ltd.）公式サイト</a></p>
+      <p>© 2025 Kaien Co., Ltd. & Yusuke Masuda. All Rights Reserved.</p>
     </footer>
   </div>
 
